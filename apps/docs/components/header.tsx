@@ -33,10 +33,25 @@ function ThemeToggle() {
   );
 }
 
-export function Header() {
+export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md">
       <div className="flex h-[60px] items-center px-4 gap-4 max-w-[1600px] mx-auto">
+        {/* Mobile menu button */}
+        {onMenuClick && (
+          <button
+            onClick={onMenuClick}
+            className="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 transition-colors shrink-0"
+            aria-label="Open navigation menu"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        )}
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 mr-4 shrink-0">
           <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
