@@ -6,13 +6,48 @@ import { DocsRuntimeBridge } from "@/components/docs-runtime-bridge";
 import { Search } from "@/components/search";
 import "@/app/globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cortexui.llcortex.ai";
+const socialImageAlt = "CortexUI social preview showing UI that speaks to humans and machines.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s — CortexUI",
     default: "CortexUI — AI-native design system"
   },
   description: "The design system that makes web interfaces visually usable for humans and programmatically operable for AI agents.",
-  keywords: ["design system", "AI", "UI components", "accessibility", "React"]
+  keywords: ["design system", "AI", "UI components", "accessibility", "React"],
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "CortexUI",
+    title: "CortexUI — AI-native design system",
+    description:
+      "UI that speaks to humans and machines. CortexUI makes interfaces visually usable for people and programmatically operable for AI agents.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1290,
+        height: 970,
+        alt: socialImageAlt
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CortexUI — AI-native design system",
+    description:
+      "UI that speaks to humans and machines. CortexUI makes interfaces visually usable for people and programmatically operable for AI agents.",
+    images: [
+      {
+        url: "/opengraph-image",
+        alt: socialImageAlt
+      }
+    ]
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
