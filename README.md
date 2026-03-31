@@ -310,6 +310,16 @@ Contributions are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup in
 
 ---
 
+## ☕ Support
+
+If you find CortexUI useful, you can support the project:
+
+👉 https://buymeacoffee.com/nishchya
+
+It helps keep the project alive and growing.
+
+---
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
